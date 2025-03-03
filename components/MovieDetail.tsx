@@ -11,7 +11,7 @@ export default function MovieDetail({ movie }: { movie: MovieDTO | null }) {
   return (
     <DialogContent className="min-w-fit">
       <DialogTitle></DialogTitle>
-      <div className="flex flex-col sm:flex-row gap-8 w-[800px] p-4">
+      <div className="flex flex-col sm:flex-row gap-8 w-fit sm:w-[800px] p-4">
         <Image
           className="rounded-xl object-cover"
           src={`https://image.tmdb.org/t/p/w500${movie.imagePath}`}
@@ -21,7 +21,7 @@ export default function MovieDetail({ movie }: { movie: MovieDTO | null }) {
           loading="eager"
         />
         <div className="flex flex-col gap-4 justify-evenly">
-          <div className="flex text-2xl font-bold gap-4 items-center">
+          <div className="flex flex-col sm:flex-row text-2xl font-bold gap-4 items-start">
             {movie.title} 
             <span className="font-bold text-xl">⭐ {formatToRoundPerMax(movie.rating)}</span>
           </div>

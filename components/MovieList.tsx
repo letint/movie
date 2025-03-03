@@ -4,7 +4,7 @@ import { Dialog } from "@/components/ui/dialog";
 import MovieDetail from "./MovieDetail";
 export default function MovieList({ movies }: { movies: MovieDTO[] }) {
   return (
-    <section>
+    <section className="self-start">
       {movies.map((movie: MovieDTO) => (
         <Dialog key={movie.id}>
           <MovieItem movie={movie} />
