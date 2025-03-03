@@ -2,35 +2,26 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+First, please install all dependencies
 
 ```bash
-npm run dev
-# or
+yarn install
+```
+
+To run dev server please use 
+
+```bash
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## App screenshots
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+[url=https://postimg.cc/gX8k0N9M][img]https://i.postimg.cc/gX8k0N9M/Zrzut-ekranu-2025-03-3-o-9-38-53-PM.png[/img][/url]
 
-## Learn More
+[url=https://postimg.cc/bGKw845D][img]https://i.postimg.cc/bGKw845D/Zrzut-ekranu-2025-03-3-o-9-39-04-PM.png[/img][/url]
 
-To learn more about Next.js, take a look at the following resources:
+## Additinal info:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+In project directory is movie/[id].tsx file that is not used anywhere. It renders MovieDialog and should be trigger by NextJS <Link href="/movie/{movie.id}"> to achieve change layout and set path in url but it's not aligned with design (user stay on the same page) so I keep it here just to show that I understand dynamic routes in nextjs.
