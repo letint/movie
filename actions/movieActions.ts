@@ -24,24 +24,3 @@ export async function getMovies(): Promise<MovieDTO[]> {
     return [];
   }
 }
-
-export async function getMovieDetails(
-  movieId: number
-): Promise<MovieDTO | null> {
-  try {
-    const response: Response = await fetch(
-      `${TMBD_API_URL}/movie/${movieId}?api_key=${TMDB_API_KEY}`,
-      {
-        next: { revalidate: 3600 },
-      }
-    );
-
-    if (!response.ok) throw new Error(`Failed to fetch movie details.`);
-
-    const movie: Movie = await response.json();
-    return mapMovieToDTO(movie);
-  } catch (error) {
-    console.error("Error when fetching movie details", error);
-    return null;
-  }
-}
