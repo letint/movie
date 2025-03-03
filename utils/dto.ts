@@ -6,4 +6,5 @@ export const mapMovieToDTO = (movie: Movie): MovieDTO => ({
   releaseDate: movie.release_date,
   imagePath: movie.poster_path,
   overview: movie.overview,
+  rating: movie.vote_average,
 });
