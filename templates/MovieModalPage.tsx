@@ -11,7 +11,7 @@ export default async function MovieModalTemplate({
   const movies: MovieDTO[] = await getMovies();
   const movie = movies.find((m) => String(m.id) === id) || null;
 
-  if (!movie) return null;
+  if (!movie) return 'Movie not found!';
 
   return <MovieDetail movie={movie} />;
 }
