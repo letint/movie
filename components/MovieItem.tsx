@@ -1,7 +1,7 @@
 import { MovieDTO } from "@/types/movie";
 import Image from "next/image";
-import { DialogTrigger } from "@/components/ui/dialog";
 import { ReleaseDate } from "@/components/ReleaseDate";
+import Link from "next/link";
 
 export default function MovieItem({ movie }: { movie: MovieDTO }) {
   return (
@@ -14,9 +14,9 @@ export default function MovieItem({ movie }: { movie: MovieDTO }) {
         alt={movie.title}
       />
       <div className="flex flex-col justify-evenly">
-        <DialogTrigger asChild>
+        <Link href={`/movie/${movie.id}`} as={`/movie/${movie.id}`}  scroll={false}>
           <div className="font-bold text-md cursor-pointer">{movie.title}</div>
-        </DialogTrigger>
+        </Link>
         <ReleaseDate releaseDate={movie.releaseDate} />
       </div>
     </div>

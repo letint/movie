@@ -5,7 +5,7 @@ export function ReleaseDate({ releaseDate }: { releaseDate: string }) {
     <div className="flex gap-2 text-grey-500">
       <Image
         className="text-bold text-xl"
-        src={"./calendarIcon.svg"}
+        src={"../calendarIcon.svg"}
         width={15}
         height={15}
         alt="movie release date"

@@ -18,4 +18,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Additinal info:
 
-In project directory is movie/[id].tsx file that is not used anywhere. It renders MovieDialog and should be trigger by NextJS <Link href="/movie/{movie.id}"> to achieve change layout and set path in url but it's not aligned with design (user stay on the same page) so I keep it here just to show that I understand dynamic routes in nextjs.
+I refactored my before aproach how Modal was implemented - I didn't like multiple instances of Dialog. It was not efficient. 
+
+However changing it into Intercepting Routing didn't allows me reflect 100% design (Modal Overlay over ModalList)
+
+In addition when we go directly into link we see open modal - that was not required but happy that works :)
+
+My time for this task is over (limit 5h) so plan for future will be spend more time and work to pixel perfect design.

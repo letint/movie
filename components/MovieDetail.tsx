@@ -1,17 +1,13 @@
 import { MovieDTO } from "@/types/movie";
-import { DialogContent, DialogTitle } from "./ui/dialog";
 import Image from "next/image";
 import { ReleaseDate } from "./ReleaseDate";
 import { formatToRoundPerMax } from "@/utils/rate";
-import { notFound } from "next/navigation";
 
 export default function MovieDetail({ movie }: { movie: MovieDTO | null }) {
-  if (!movie) return notFound();
+  if (!movie) return null;
 
   return (
-    <DialogContent className="min-w-fit">
-      <DialogTitle></DialogTitle>
-      <div className="flex flex-col sm:flex-row gap-8 w-fit sm:w-[800px] p-4">
+      <div className="flex flex-col sm:flex-row gap-8 p-4">
         <Image
           className="rounded-xl object-cover"
           src={`https://image.tmdb.org/t/p/w500${movie.imagePath}`}
@@ -21,7 +17,7 @@ export default function MovieDetail({ movie }: { movie: MovieDTO | null }) {
           loading="eager"
         />
         <div className="flex flex-col gap-4 justify-evenly">
-          <div className="flex flex-col sm:flex-row text-2xl font-bold gap-4 items-start">
+          <div className="flex flex-col md:flex-row text-2xl font-bold gap-4 items-start">
             {movie.title} 
             <span className="font-bold text-xl">⭐ {formatToRoundPerMax(movie.rating)}</span>
           </div>
@@ -29,6 +25,5 @@ export default function MovieDetail({ movie }: { movie: MovieDTO | null }) {
           <div className="text-sm"> {movie.overview}</div>
         </div>
       </div>
-    </DialogContent>
   );
 }
