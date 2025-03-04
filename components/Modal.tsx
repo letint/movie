@@ -7,9 +7,9 @@ export function Modal({ children }: { children: ReactNode }) {
   const router = useRouter();
 
   return (
-    <Dialog defaultOpen={true} open={true} onOpenChange={() => router.back()}>
+    <Dialog defaultOpen={true} onOpenChange={() => router.back()}>
       <DialogTitle></DialogTitle>
-      <DialogOverlay className="fixed bg-white opacity-1 w-full" />
+      <DialogOverlay className="fixed z-40 bg-white w-full" />
       <DialogContent className="fixed z-50 w-full sm:max-w-fill">
         {children}
       </DialogContent>

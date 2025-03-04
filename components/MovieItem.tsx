@@ -1,11 +1,12 @@
 import { MovieDTO } from "@/types/movie";
 import Image from "next/image";
+
 import { ReleaseDate } from "@/components/ReleaseDate";
 import Link from "next/link";
 
 export default function MovieItem({ movie }: { movie: MovieDTO }) {
   return (
-    <div className="flex border w-fit sm:w-[460px] rounded-2xl p-1 gap-8 mb-4  max-h-[100px]">
+    <div className="flex border w-full sm:w-[460px] rounded-2xl p-1 gap-8 mb-4  max-h-[100px]">
       <Image
         className="rounded-xl object-cover"
         src={`https://image.tmdb.org/t/p/w500${movie.imagePath}`}
